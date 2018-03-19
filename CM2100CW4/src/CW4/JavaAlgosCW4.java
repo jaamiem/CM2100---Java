@@ -3,6 +3,16 @@ package CW4;
 import java.util.*;
 
 public class JavaAlgosCW4 {	
+	
+	/**
+     * To partition the passed array into ascending order going a[left...right]
+
+     *
+     * @param a the array.
+     * @param left the left side of the (sub)array.
+     * @param right the right side of the (sub)array.
+     * @return i to pass values into recursion.
+     */
 	private static final int partitionOne(int[] a, int left, int right)
 	{
 		//1:
@@ -44,6 +54,15 @@ public class JavaAlgosCW4 {
 		return i;
 	}
 	
+	/**
+     * To partition the passed array into ascending order going a[left...right]
+
+     *
+     * @param a the array.
+     * @param left the left side of the (sub)array.
+     * @param right the right side of the (sub)array.
+     * @return j to pass values into recursion.
+     */
 	private static final int partitionTwo(Comparable[] a, int left, int right)
 	{
 		//1:

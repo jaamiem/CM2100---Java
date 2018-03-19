@@ -55,20 +55,34 @@ public class ArrayUtil {
 	public static int medianOfThree (Comparable[] a, int left, int mid, int right) {
 	 /* Return median position in array of elements
 	 * a[left], a[mid], and a[right] */
-	 if (a[left].compareTo(a[mid]) < 0) {
-		if (a[mid].compareTo(a[right]) < 0) 
-			return mid;
-		else if(a[left].compareTo(a[right]) < 0) 
-			return right;
-		else 
-			return left;
-	 } else {
-		if (a[mid].compareTo(a[right]) > 0) 
-			return mid;
-		else if (a[left].compareTo(a[right]) > 0) 
-			return right;
-		else 
-			return left;
-	 }
+		if (a[left].compareTo(a[mid]) < 0) {
+			if (a[mid].compareTo(a[right]) < 0) 
+				return mid;
+			else if(a[left].compareTo(a[right]) < 0) 
+				return right;
+			else 
+				return left;
+		} else {
+			if (a[mid].compareTo(a[right]) > 0) 
+				return mid;
+			else if (a[left].compareTo(a[right]) > 0) 
+				return right;
+			else 
+				return left;
+		}
 	} 
+	
+	public static void quickSearch(int reps, int aSize, int range) {
+		int numReps = reps;
+		int arraySize = aSize;
+		int rangeOfNumbers = range;
+		for (int i = 0; i < numReps; i++) {
+			Comparable[] a = ArrayUtil.randomIntArray(arraySize, rangeOfNumbers);
+			int n = new Random().nextInt(rangeOfNumbers);
+			JavaAlgosCW4.quickSort2(a, 0, a.length-1);
+		}
+		System.out.println("Array size = " + arraySize
+				+ " Range of random numbers used = " + rangeOfNumbers
+				+ " Average number of comparisons " + 1.0 * Main.cCounter / numReps);
+	}
 }
